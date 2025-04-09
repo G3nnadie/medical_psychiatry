@@ -402,6 +402,57 @@
   max-width: 25%;
 }
 
+.q-reviews__item {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.q-reviews__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.q-reviews__user a {
+  color: inherit;
+}
+
+.q-reviews__user a:hover {
+  text-decoration: underline;
+}
+
+.q-reviews__body p {
+  margin-bottom: 0 !important;
+}
+
+.q-reviews__body p span,
+.q-reviews__body p span a {
+  display: block;
+}
+
+.q-reviews__body p span {
+  margin-bottom: 15px;
+}
+
+.q-reviews__body p span a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.q-reviews__body p span a:hover {
+  text-decoration: none;
+}
+
+.q-reviews__bott {
+  margin-top: 30px;
+}
+
 /* Promotion */
 
 .m-promotion {
