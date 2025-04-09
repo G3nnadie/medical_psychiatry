@@ -1,0 +1,945 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+
+
+/* Hero */
+
+.m-hero {
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.m-hero:after {
+  content: " ";
+  height: 47px;
+  position: absolute;
+  pointer-events: none;
+  left: 0;right: 0;bottom: 0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(57.61%, #9274CE), color-stop(84.07%, #6F50AC));
+  background: -o-linear-gradient(left, #9274CE 57.61%, #6F50AC 84.07%);
+  background: linear-gradient(90deg, #9274CE 57.61%, #6F50AC 84.07%);
+}
+
+.m-hero__bg {
+  z-index: -2;
+  position: absolute;
+  pointer-events: none;
+  top: 0;left: 0;right: 0;bottom: 0;
+}
+
+.m-hero .container,
+.m-hero__box {
+  position: relative;
+}
+
+.m-hero .container {
+  min-height: 637px;
+  padding-top: 65px;
+  padding-bottom: 140px;
+}
+
+.m-hero__box {
+  max-width: 650px;width: 100%;
+}
+
+.m-hero__title {
+  color: #684C9E;
+  font-size: 48px;
+  line-height: 1.15;
+  font-weight: bold;
+  margin: 0 !important;
+}
+
+.m-hero__title span {
+  color: #E2166F;
+  display: block;
+  font-size: 55px;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.m-hero__title span:first-child {
+  margin-bottom: 18px;
+}
+
+.m-hero__title span:last-child {
+  margin-top: 18px;
+}
+
+.m-hero__btn {
+  margin-top: 40px;
+}
+
+.m-hero__btn .q-btn {
+  height: 76px;
+  font-weight: bold;
+}
+
+/* Time */
+
+.m-hero__time {
+  z-index: 1;
+  width: 400px;
+  line-height: 1;
+  background: #fff;
+  font-weight: bold;
+  position: absolute;
+  padding: 25px 30px;
+  border-radius: 20px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  left: 450px;bottom: -145px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.m-hero__time strong {
+  color: #E2166F;
+  font-size: 28px;
+}
+
+.m-countdown.m-countdown {
+  padding: 0;
+  margin: 23px 0 0;
+}
+
+.m-countdown li {
+  width: 33%;
+  text-align: center;
+}
+
+.m-countdown li:not(:last-child) {
+  margin-right: 18px;
+}
+
+.m-countdown li span {
+  color: #6F50AC;
+  font-size: 54px;
+  min-height: 86px;
+  position: relative;
+  background: #C4DBEB;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.m-countdown li:not(:last-child) span:after {
+  content: ":";
+  color: #6F50AC;
+  font-size: 36px;
+  position: absolute;
+  top: 50%;right: -13px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-animation: opacity 1s infinite linear;
+          animation: opacity 1s infinite linear;
+}
+
+.m-countdown.m-countdown p {
+  color: #6F50AC;
+  margin: 15px 0 0;
+}
+
+@-webkit-keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Img */
+
+.m-hero__img {
+  z-index: -1;
+  position: absolute;
+  pointer-events: none;
+  top: -77px;right: -334px;
+}
+
+.m-hero__info {
+  z-index: 1;
+  width: 410px;
+  color: #543C84;
+  font-weight: 600;
+  line-height: 1.15;
+  position: absolute;
+  right: 15px;bottom: 17px;
+}
+
+.m-hero__info * {
+  display: block;
+}
+
+.m-hero__info span {
+  font-size: 18px;
+}
+
+.m-hero__info strong {
+  font-size: 25px;
+}
+
+.m-hero__info.m-hero__info p {
+  color: #fff;
+  font-size: 16px;
+  margin: 24px 0 0;
+}
+
+/* Vantage */
+
+.m-vantage__item--big span {
+  color: #E2166F;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+/* Doctors */
+
+.m-doctors {
+  padding-top: 100px;
+}
+
+.m-doctors .q-title h2 {
+  width: 55%;
+}
+
+.m-doctors .q-title p {
+  width: 530px;
+  line-height: 1.2;
+  padding-left: 40px;
+  margin: 0 !important;
+  padding-right: 0 !important;
+}
+
+.m-doctors .row [class*='col-'] {
+  margin-bottom: 25px;
+}
+
+.m-doctors .t-psych__item,
+.m-doctors .t-psych__type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.m-doctors .t-psych__item {
+  height: 100%;
+}
+
+.m-doctors .t-psych__name.t-psych__name {
+  margin: 22px 0 0;
+}
+
+.m-doctors .t-psych__type {
+  margin-top: 16px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.m-doctors .t-psych__type p {
+  margin: 0 !important;
+}
+
+.m-doctors .t-psych__experience.t-psych__experience {
+  margin: 20px 0 0;
+}
+
+.m-doctors .t-psych__btn {
+  margin-top: 40px;
+}
+
+.m-doctors__btn {
+  margin-top: 20px;
+}
+
+/* Consult */
+
+.m-consult {
+  color: #fff;
+  overflow: hidden;
+  margin-top: 110px;
+  background: #9274CE;
+}
+
+.m-consult .container {
+  z-index: 1;
+  padding-top: 80px;
+  position: relative;
+  padding-bottom: 95px;
+}
+
+.m-consult .container:after {
+  z-index: -2;
+  content: " ";
+  opacity: 0.15;
+  top: 0;left: -55px;
+  position: absolute;
+  pointer-events: none;
+  width: 1440px;height: 807px;
+  background: url(img/m-consult-graphics.svg) center/contain no-repeat;
+}
+
+.m-consult__box {
+  max-width: 550px;width: 100%;
+}
+
+.m-consult .q-title h2 {
+  color: inherit;
+}
+
+.m-consult__tel {
+  margin-top: 30px;
+}
+
+.m-consult__tel a {
+  line-height: 1;
+  color: #E2F3FF;
+  font-size: 54px;
+  font-weight: bold;
+}
+
+.m-consult__tel a:hover {
+  color: #fff;
+}
+
+.m-consult__btn {
+  margin-top: 45px;
+}
+
+.m-consult__btn .q-btn {
+  height: 85px;
+  font-size: 31px;
+  font-weight: bold;
+  max-width: 480px;width: 100%;
+}
+
+.m-consult__text.m-consult__text {
+  margin: 55px 0 0;
+}
+
+.m-consult__text {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.m-consult__text img {
+  width: 70px;
+  display: inline-block;
+}
+
+.m-consult__text span {
+  top: 16px;
+  font-size: 32px;
+  position: relative;
+  margin-bottom: 13px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.m-consult__img {
+  z-index: -1;
+  width: 1625px;
+  position: absolute;
+  pointer-events: none;
+  left: 60px;bottom: -180px;
+}
+
+.m-consult__img img {
+  display: block;
+}
+
+/* Reviews */
+
+.m-reviews .q-title p {
+  max-width: 550px;
+  padding-left: 30px;
+  margin: 0 !important;
+}
+
+.m-platform--four [class*='col-'] {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  max-width: 25%;
+}
+
+/* Promotion */
+
+.m-promotion {
+  z-index: 1;
+  overflow: hidden;
+  margin-top: 120px;
+  position: relative;
+  background: -o-linear-gradient(172.5deg, rgba(230, 222, 248, 0) -22.49%, #E6DEF8 62.1%), -o-linear-gradient(192.72deg, #9274CE 40.43%, #6F50AC 84.45%);
+  background: linear-gradient(277.5deg, rgba(230, 222, 248, 0) -22.49%, #E6DEF8 62.1%), linear-gradient(257.28deg, #9274CE 40.43%, #6F50AC 84.45%);
+}
+
+.m-promotion .container {
+  padding-top: 85px;
+  position: relative;
+  padding-bottom: 90px;
+}
+
+.m-promotion .container:after {
+  z-index: -1;
+  content: " ";
+  opacity: 0.1;
+  position: absolute;
+  pointer-events: none;
+  top: -77px;right: -550px;
+  width: 1210px;height: 1302px;
+  background: url(img/m-promotion-graphics.png) center/contain no-repeat;
+}
+
+.m-promotion .m-hero__btn .q-btn {
+  max-width: 498px;width: 100%;
+}
+
+.m-hero__tel {
+  margin-top: 40px;
+}
+
+.m-hero__tel a {
+  color: #684C9E;
+  font-size: 53px;
+  font-weight: bold;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
+.m-hero__tel a:hover {
+  opacity: .7;
+}
+
+.m-promotion .m-hero__time {
+  width: 90%;
+  left: 100%;bottom: 0;
+  padding: 40px 50px 30px;
+}
+
+.m-promotion .m-hero__time strong {
+  font-size: 39px;
+}
+
+.m-promotion .m-countdown li span {
+  font-size: 64px;
+  min-height: 106px;
+}
+
+.m-promotion .m-countdown.m-countdown p {
+  font-size: 20px;
+}
+
+/* ======================================== */
+/*                  Media                   */
+/* ======================================== */
+
+/*==========  Desktop First Method  ==========*/
+
+@media only screen and (max-width : 1299px) {
+  .m-hero__time {
+    left: 400px;
+  }
+  .m-hero__info {
+    width: 340px;
+  }
+  .m-promotion .m-hero__time {
+    margin-left: -100px;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px) {
+  .m-hero .container {
+    min-height: 560px;
+  }
+  .m-hero__box {
+    max-width: 490px;
+  }
+  .m-hero__title {
+    font-size: 36px;
+  }
+  .m-hero__title span {
+    font-size: 44px;
+  }
+  .m-hero__btn .q-btn {
+    height: 58px;
+  }
+  .m-hero__time {
+    left: 350px;
+    width: 350px;
+  }
+  .m-hero__time strong {
+    font-size: 24px;
+  }
+  .m-countdown li span {
+    font-size: 40px;
+    min-height: 74px;
+  }
+  .m-hero__info span {
+    font-size: 16px;
+  }
+  .m-hero__info strong {
+    font-size: 20px;
+    margin-top: 4px;
+  }
+  .m-hero__info.m-hero__info p {
+    font-size: 14px;
+  }
+  .m-hero__img {
+    width: 1100px;
+    right: -250px;
+  }
+  .m-vantage .q-title {
+    margin-bottom: 30px;
+    max-width: 600px;width: 100%;
+  }
+  .m-vantage__item--big span {
+    font-size: 28px;
+  }
+  .m-doctors {
+    padding-top: 65px;
+  }
+  .m-consult {
+    margin-top: 65px;
+  }
+  .m-consult__box {
+    max-width: 450px;
+  }
+  .m-consult__tel a {
+    font-size: 42px;
+  }
+  .m-consult__btn .q-btn {
+    height: 60px;
+    font-size: 18px;
+    max-width: 300px;
+  }
+  .m-consult__text {
+    font-size: 19px;
+  }
+  .m-consult__text img {
+    width: 50px;
+  }
+  .m-consult__text span {
+    top: 11px;
+    font-size: 24px;
+  }
+  .m-consult .container:after {
+    width: 1200px;height: 666px;
+  }
+  .m-consult__img {
+    left: 100px;
+    width: 1300px;
+  }
+  .m-reviews {
+    padding-top: 65px;
+  }
+  .m-reviews .q-title p {
+    width: 450px;
+  }
+  .m-promotion {
+    margin-top: 75px;
+  }
+  .m-promotion .container {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .m-promotion .m-hero__btn .q-btn {
+    max-width: 350px;
+  }
+  .m-hero__tel a {
+    font-size: 40px;
+  }
+  .m-promotion .m-hero__time {
+    margin-left: 0;
+    padding: 30px 20px 40px;
+  }
+  .m-promotion .m-hero__time strong {
+    font-size: 30px;
+  }
+  .m-promotion .m-countdown li span {
+    font-size: 50px;
+    min-height: 90px;
+  }
+  .m-promotion .m-countdown.m-countdown p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width : 1099px) {
+  .m-hero__time {
+    left: 300px;
+  }
+  .m-hero__info {
+    width: 280px;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px) {
+  .m-hero .container {
+    padding-top: 50px;
+    min-height: initial;
+  }
+  .m-hero__box {
+    max-width: 350px;
+  }
+  .m-hero__title {
+    font-size: 28px;
+  }
+  .m-hero__title span {
+    font-size: 26px;
+  }
+  .m-hero__title span:first-child {
+    margin-bottom: 10px;
+  }
+  .m-hero__title span:last-child {
+    margin-top: 10px;
+  }
+  .m-hero__btn {
+    margin-top: 30px;
+  }
+  .m-hero__time {
+    width: 100%;
+    margin-top: 35px;
+    position: static;
+  }
+  .m-hero__info {
+    left: 15px;
+    width: 100%;
+  }
+  .m-vantage .t-vantage__item:not(.m-vantage__item--big) span {
+    font-size: 18px;
+  }
+  .m-vantage__item--big span {
+    font-size: 24px;
+  }
+  .m-doctors {
+    padding-top: 55px;
+  }
+  .m-doctors .q-title p {
+    width: 100%;
+    padding: 20px 0 0;
+  }
+  .m-doctors .row [class*='col-'] {
+    margin-bottom: 10px;
+  }
+  .m-doctors .t-psych__item {
+    padding: 30px 15px;
+    width: 100% !important;
+  }
+  .m-doctors .t-psych__name.t-psych__name {
+    font-size: 18px;
+  }
+  .m-doctors .t-psych__type,
+  .m-doctors .t-psych__experience.t-psych__experience {
+    margin-top: 10px;
+  }
+  .m-doctors .t-psych__btn {
+    margin-top: 20px;
+  }
+  .m-doctors__btn {
+    margin-top: 30px;
+  }
+  .m-consult__img {
+    left: 0;
+  }
+  .m-reviews .q-title p {
+    width: 100%;
+    padding: 20px 0 0;
+  }
+  .m-promotion {
+    margin-top: 60px;
+  }
+  .m-promotion .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .m-hero__box {
+    max-width: 100% !important;
+  }
+  .m-promotion .m-hero__time {
+    width: 100% !important;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+  .m-hero__img {
+    width: 1000px;
+    top: 0;right: -300px;
+  }
+  .m-vantage__item--big span {
+    font-size: 20px;
+  }
+  .m-consult {
+    margin-top: 55px;
+  }
+  .m-consult .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .m-consult__box {
+    width: 300px;
+  }
+  .m-consult__tel {
+    margin-top: 20px;
+  }
+  .m-consult__tel a {
+    font-size: 30px;
+  }
+  .m-consult__btn {
+    margin-top: 30px;
+  }
+  .m-consult__btn .q-btn {
+    height: 48px;
+    font-size: 16px;
+    max-width: 230px;
+  }
+  .m-consult__text.m-consult__text {
+    margin-top: 40px;
+  }
+  .m-consult__text {
+    font-size: 13px;
+  }
+  .m-consult__text img {
+    width: 36px;
+  }
+  .m-consult__text span {
+    top: 7px;
+    font-size: 18px;
+  }
+  .m-consult .container:after {
+    width: 870px;
+    height: 490px;
+  }
+  .m-consult__img {
+    left: -50px;
+    width: 1000px;
+  }
+  .m-hero__tel a {
+    font-size: 30px;
+  }
+  .m-promotion .m-hero__time {
+    padding: 20px 15px;
+  }
+  .m-promotion .m-hero__time strong {
+    font-size: 24px;
+  }
+  .m-promotion .m-countdown li span {
+    font-size: 36px;
+    min-height: 70px;
+  }
+  .m-promotion .m-countdown.m-countdown p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width : 629px) {
+  .m-hero__box {
+    max-width: 280px;
+  }
+  .m-hero__title {
+    font-size: 22px;
+  }
+  .m-hero__title span {
+    font-size: 23px;
+  }
+  .m-hero__time {
+    padding: 15px;
+  }
+  .m-hero__time strong {
+    font-size: 20px;
+  }
+  .m-countdown.m-countdown {
+    margin-top: 15px;
+  }
+  .m-countdown li span {
+    font-size: 28px;
+    min-height: 54px;
+  }
+  .m-countdown.m-countdown p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .m-hero__img {
+    right: -350px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 479px) {
+  .m-hero__box {
+    max-width: 200px;
+  }
+  .m-hero__title,
+  .m-hero__title span {
+    font-size: 16px;
+  }
+  .m-hero__title span:first-child {
+    margin-bottom: 6px;
+  }
+  .m-hero__title span:last-child {
+    margin-top: 6px;
+  }
+  .m-hero__btn {
+    margin-top: 20px;
+  }
+  .m-hero__btn .q-btn {
+    height: 50px;
+    font-size: 13px;
+  }
+  .m-hero__btn .q-btn svg {
+    width: 12px;height: 12px;
+  }
+  .m-hero__img {
+    right: -400px;
+  }
+  .m-countdown li:not(:last-child) {
+    margin-right: 9px;
+  }
+  .m-countdown li:not(:last-child) span:after {
+    right: -7px;
+    font-size: 24px;
+  }
+  .m-countdown.m-countdown p {
+    font-size: 12px;
+  }
+  .m-vantage .t-vantage__item i {
+    width: 80px;height: 80px;
+  }
+  .m-vantage .t-vantage__item:not(.m-vantage__item--big) span,
+  .m-vantage__item--big span {
+    font-size: 16px;
+  }
+  .m-consult__img {
+    top: 120px;
+    left: -150px;
+  }
+  .m-promotion  .m-hero__title, 
+  .m-promotion  .m-hero__title span {
+    font-size: 20px;
+  }
+  .m-promotion .m-hero__btn .q-btn {
+    max-width: 220px;
+  }
+}
+
+@media only screen and (max-width : 399px) {
+  .m-hero__img {
+    right: -430px;
+  }
+}
+
+@media only screen and (max-width : 369px) {
+  .m-hero__img {
+    right: -450px;
+  }
+  .m-vantage .t-vantage__item i {
+    width: 70px;height: 70px;
+  }
+  .m-vantage .t-vantage__item:not(.m-vantage__item--big) span,
+  .m-vantage__item--big span {
+    font-size: 15px;
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .m-vantage .container {
+    padding-top: 78px;
+  }
+  .m-vantage .q-title {
+    margin-bottom: 40px;
+  }
+  .m-vantage .t-vantage__item i {
+    width: 180px;height: 180px;
+  }
+  .m-doctors .q-title p,
+  .m-reviews .q-title p {
+    font-size: 20px;
+  }
+  .m-consult__btn .q-btn svg {
+    width: 24px;height: 24px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

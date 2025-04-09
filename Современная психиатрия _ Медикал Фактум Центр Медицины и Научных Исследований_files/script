@@ -1,0 +1,180 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+    (function() {
+        var dataUrl = 'https://app.klinikon.ru',
+            initialized = false,
+            iframeIsLoad = false,
+            position = 'center',
+            wrapper,
+            iframe,
+            layer,
+            contain,
+            loaderWrapper,
+            loader,
+            d = document,
+            bodyOldStyle,
+            htmlOldStyle,
+            body = function() {
+                var buff = d.getElementsByTagName('body');
+                return buff.item(0);
+            },
+            html = function() {
+                var buff = d.getElementsByTagName('html');
+                return buff.item(0);
+            },
+            getMaxZIndex = function() {
+                var maxZIndex = 0;
+                if(typeof document.querySelectorAll !== 'function') {
+                    return maxZIndex;
+                }
+                var tags = document.querySelectorAll("body *");
+                for(var i = 0; i < tags.length; i++) {
+                    var element = tags.item(i);
+                    var zindex=document.defaultView.getComputedStyle(element,null).getPropertyValue("z-index");
+                    if (zindex != 'auto') {
+                        zindex = parseInt(zindex);
+                        if(zindex > maxZIndex) {
+                            maxZIndex = zindex;
+                        }
+                    }
+                }
+                return maxZIndex;
+            },
+            openIframe = function(url) {
+                iframe = d.createElement('iframe');
+                var setIframeAttributes = function() {
+                    iframe.setAttribute('style', 'width:100%;height:100%;border:none;');
+                };
+                iframe.setAttribute('src', url);
+                iframe.setAttribute('crossorigin', 'use-credentials');
+                iframe.setAttribute('id', 'iframe');
+                setIframeAttributes();
+                contain.appendChild(iframe);
+                iframe.onload = function() {
+                    if (!iframeIsLoad) {
+                        contain.removeChild(loaderWrapper);
+                    }
+                    iframeIsLoad = true;
+                };
+            },
+            removeScrolls = function() {
+                var h = html(),
+                    b = body();
+                htmlOldStyle = h.getAttribute('style');
+                bodyOldStyle = b.getAttribute('style');
+                h.setAttribute('style', 'overflow: hidden !important');
+                b.setAttribute('style', 'overflow: hidden !important');
+            },
+            returnScrolls = function() {
+                var h = html(),
+                    b = body();
+                h.setAttribute('style', htmlOldStyle);
+                b.setAttribute('style', bodyOldStyle);
+            },
+            isMobile = function() {
+                return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+                    navigator.userAgent.toLowerCase()
+                );
+            },
+            addCssFile = function(fileName) {
+                var head = d.head;
+                var link = d.createElement("link");
+                link.type = "text/css";
+                link.rel = "stylesheet";
+                link.href = fileName;
+                head.appendChild(link);
+            };
+
+        window.arnicaBooking = {
+            init: function() {
+                if (!initialized) {
+                    addCssFile(dataUrl + '/booking/css/widget/style.css?' + Math.random());
+                    layer = d.createElement('div');
+                    layer.classList.add("arnica-layer", "arnica-layer-hide");
+                    layer.setAttribute('style', 'z-index: ' + getMaxZIndex() + 1);
+                    contain = d.createElement('div');
+                    contain.classList.add("arnica-widget-wrapper", "arnica-widget-wrapper-hide", "arnica-widget-wrapper-" + position);
+                    contain.setAttribute('style', 'display:none; z-index: ' + getMaxZIndex() + 2);
+                    loaderWrapper = d.createElement('div');
+                    loaderWrapper.id = "arnica-preloader";
+                    loader = d.createElement('div');
+                    loader.id = "arnica-loader";
+                    loaderWrapper.appendChild(loader);
+                    contain.appendChild(loaderWrapper);
+                    body().appendChild(layer);
+                    body().appendChild(contain);
+                    initialized = true;
+                }
+            },
+            open: function(pos) {
+                if (pos) {
+                    position = pos;
+                    contain.classList.remove("arnica-widget-wrapper-left", "arnica-widget-wrapper-right", "arnica-widget-wrapper-center");
+                    contain.classList.add("arnica-widget-wrapper-" + position);
+                }
+                var self = this;
+                if(isMobile()) {
+                    var win = window.open(this.getUrl(), '_blank');
+                    win.focus();
+                    return;
+                }
+                var closeListener = function(event) {
+                    if(event.data === "CloseBookingFrame") {
+                        self.close();
+                        if(window.addEventListener){
+                            window.removeEventListener("message", closeListener,false);
+                        } else {
+                            window.detachEvent("onmessage", closeListener);
+                        }
+                    }
+                };
+                removeScrolls();
+
+                contain.style.display = null;
+                layer.classList.remove("arnica-layer-hide");
+                layer.classList.add("arnica-layer-show");
+                contain.classList.remove("arnica-widget-wrapper-hide");
+                contain.classList.add("arnica-widget-wrapper-show");
+
+                if (!iframeIsLoad) {
+                    openIframe(this.getUrl(true));
+                }
+                if(window.addEventListener){
+                    window.addEventListener("message", closeListener,false);
+                } else {
+                    window.attachEvent("onmessage", closeListener);
+                }
+
+                return false;
+            },
+            close: function() {
+                layer.classList.remove("arnica-layer-show");
+                layer.classList.add("arnica-layer-hide");
+                contain.classList.remove("arnica-widget-wrapper-show");
+                contain.classList.add("arnica-widget-wrapper-hide");
+                returnScrolls();
+                return false;
+            },
+            getUrl: function(flag) {
+                return dataUrl + '/booking/booking?' +
+                    (flag ? 'from=site&' : '') + 'orgid=9468&networkid=0#/main';
+            },
+            getZIndex : function () {
+                return getMaxZIndex() + 1;
+            }
+        };
+        window.onlineBooking = window.arnicaBooking;
+        window.onlineBooking.init();
+    })();
+
+    var anchors = document.getElementsByTagName('a');
+    for(i=0, len=anchors.length; i<len; i++) {
+        anchors[i].addEventListener('click', function(e) {
+            if (this.getAttribute("href") === "#booking") {
+                e.preventDefault();
+                e.stopPropagation();
+                window.onlineBooking.open();
+            }
+        });
+    }
+});
